@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Asad &amp; Haniya — Private Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars"></div>
+
+<!-- ===== LOCK SCREEN ===== -->
+<section id="lockScreen" class="lock-screen">
+  <div class="lock-card">
+    <h1 class="brand">Asad <span class="amp">&amp;</span> Haniya</h1>
+    <p class="tagline">Our Private Wedding Vault</p>
+
+    <div class="heart-lock" id="heartLock">
+      <svg viewBox="0 0 200 180" class="heart-svg">
+        <path id="heartPath" d="M100,170 C20,110 10,60 45,35 C70,15 95,30 100,55
+                 C105,30 130,15 155,35 C190,60 180,110 100,170 Z"/>
+      </svg>
+      <svg viewBox="0 0 60 60" class="lock-svg" id="lockSvg">
+        <rect x="14" y="27" width="32" height="26" rx="4" class="lock-body"/>
+        <path id="shackle" d="M20,27 V18 a10,10 0 0 1 20,0 V27" class="lock-shackle"/>
+        <circle cx="30" cy="38" r="3" class="lock-hole"/>
+      </svg>
+    </div>
+
+    <p class="instructions">Enter the 24-word seed phrase to unlock the memories.<br>12 words from Asad, 12 from Haniya — combined in order.</p>
+
+    <div class="field-group">
+      <label for="asadWords">Asad's Keyphrase (1–12)</label>
+      <textarea id="asadWords" rows="2" placeholder="word1 word2 word3 ..."></textarea>
+    </div>
+
+    <div class="field-group">
+      <label for="haniyaWords">Haniya's Keyphrase (13–24)</label>
+      <textarea id="haniyaWords" rows="2" placeholder="word13 word14 word15 ..."></textarea>
+    </div>
+
+    <button id="unlockBtn" class="unlock-btn">
+      <span class="btn-text">Unlock Our Memories</span>
+      <span class="btn-spinner" hidden></span>
+    </button>
+
+    <p id="errorMsg" class="error-msg" hidden>Wrong seed phrase. Please check both fields and try again.</p>
+  </div>
+</section>
+
+<!-- ===== GALLERY (revealed after unlock) ===== -->
+<section id="gallery" class="gallery" hidden>
+  <header class="gallery-header">
+    <h2>Asad <span class="amp">&amp;</span> Haniya</h2>
+    <button id="lockAgainBtn" class="lock-again-btn">Lock Vault</button>
+  </header>
+  <div id="galleryGrid" class="gallery-grid"></div>
+  <p id="galleryLoading" class="gallery-loading">Unlock memories…</p>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
